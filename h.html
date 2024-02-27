@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartas Aleatorias</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #card {
+        width: 300px;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    #randomCardImg {
+        width: 100%;
+        height: auto;
+    }
+    #randomCardBtn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div id="card">
+    <h2>Carta Aleatoria</h2>
+    <img id="randomCardImg" src="arpa.jpg" alt="">
+    <button id="randomCardBtn">Mostrar Carta Aleatoria</button>
+</div>
+
+<script>
+    // Array de imágenes de cartas
+    const cartas = [
+        "arpa.jpg",
+        "chhalupa.jpg",
+        "corona.jpg",
+        "maceta.jpg",
+        "palma.jpg",
+        "escudo.jpg",
+        "pescado.jpg",
+        "pino.jpg",
+        "rana.jpg"
+        // Agrega el resto de las imágenes de las cartas aquí
+    ];
+
+    // Función para obtener una imagen de carta aleatoria
+    function obtenerCartaAleatoria() {
+        const indice = Math.floor(Math.random() * cartas.length);
+        return cartas[indice];
+    }
+
+    // Función para mostrar una imagen de carta aleatoria
+    function mostrarCartaAleatoria() {
+        const carta = obtenerCartaAleatoria();
+        document.getElementById('randomCardImg').src = carta;
+    }
+
+    // Event listener para el botón
+    document.getElementById('randomCardBtn').addEventListener('click', mostrarCartaAleatoria);
+</script>
+
+</body>
+</html>
